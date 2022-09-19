@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="wrapper">
+
+    <div *ngIf="heroInfo" class="info-block">
+      <h1>{{nameOfHero}}</h1>
+      <p>This hero's alias is <b>{{aliases}}</b>.</p>
+      <p>Alignment <b>{{alignment}}</b>.</p>
+      <p>Alter ego <b>{{alterEgo}}</b>.</p>
+      <p>First appeared in <b>{{firstAppearance}}</b>.</p>
+      <p>FULL NAME <b>{{fullName}}</b>.</p>
+      <p>Place of Birth <b>{{placeOfBirth}}</b>.</p>
+      <p>Publisher: <b>{{publisher}}</b>.</p>
+    </div>
+
+    <div class="image">
+      <img src="{{imageOfHero}}" alt="heroImage">
+    </div>
+
+  </div>
+
+</div>

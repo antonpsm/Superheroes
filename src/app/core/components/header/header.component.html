@@ -1,0 +1,13 @@
+<header >
+  <div class="tittle">
+   <!-- <p  class="tittle__text">MOC-TITTLE</p>-->
+    <img class="tittle__logo" [routerLink]="'/home'" src="./assets/images/superheroes_logo.png" alt="superhero img">
+  </div>
+  <div class="battle-page">
+    <h3 class="battle-page__text" (click)="navigateToBattlePage()">Battle</h3>
+  </div>
+  <div class="user-page">
+    <h3 (click)="navigateToUserProfile()" class="user-page__text">{{userNameInput}}</h3>
+  </div>
+
+</header>

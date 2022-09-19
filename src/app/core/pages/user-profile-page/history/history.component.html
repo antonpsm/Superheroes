@@ -1,0 +1,20 @@
+<div class="container">
+<!--  <button>get history</button>-->
+  <div class="wrapper">
+    <div class="header">
+      <h3 (click)="sortByResult(); numFlag = numFlag === 1 ? 2 : 1" class="sort">Sort by result of battles</h3>
+    </div>
+    <div class="result-container">
+      <div class="result-card"
+      *ngFor="let card of resultsOfBattles"
+      >
+        <div class="hero-name"><b>Hero name:</b> {{card.hero}}</div>
+        <div class="hero-id"><b>Hero id:</b> {{card.heroId}}</div>
+        <div class="win-lose"><b>win-lose:</b> {{card.result}}</div>
+        <div class="enemy-name"><b>Enemy name:</b> {{card.enemyHero}}</div>
+        <div class="enemy-id"><b>Enemy id:</b> {{card.enemyHeroId}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+

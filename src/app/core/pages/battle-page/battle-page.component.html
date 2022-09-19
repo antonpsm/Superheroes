@@ -1,0 +1,109 @@
+<div class="container">
+  <div class="header">
+    <h1 *ngIf="stopSearchFlag" (click)="stopSearch()" >Stop search!</h1>
+    <ng-container>
+      <div [ngClass]="resultOfBattleText" class="result-of-battle">
+        <h1>{{resultOfBattleText}}</h1>
+      </div>
+    </ng-container>
+  </div>
+  <div class="card" *ngFor="let card of hero"
+       [ngStyle]="{'margin-left': transitionCounter + '%'}"
+  >
+
+    <div class="perks-container">
+      <div *ngIf="intelligenceController" class="perk-item intelligence">
+        <img src="assets/images/card-icons/artificial-intelligence.png" alt="intelligence img">
+        <h3>+{{intelligenceController}}</h3>
+      </div>
+      <div *ngIf="strengthController" class="perk-item strength">
+        <img src="assets/images/card-icons/health-care.png" alt="strength img">
+        <h3>+{{strengthController}}</h3>
+      </div>
+      <div *ngIf="speedController" class="perk-item speed">
+        <img src="assets/images/card-icons/speed.png" alt="speed img">
+        <h3>+{{speedController}}</h3>
+      </div>
+      <div *ngIf="durabilityController" class="perk-item durability">
+        <img src="assets/images/card-icons/exercise.png" alt="durability img">
+
+        <h3>+{{durabilityController}}</h3>
+      </div>
+      <div *ngIf="powerController" class="perk-item power">
+        <img src="assets/images/card-icons/flash.png" alt="power img">
+        <h3>+{{powerController}}</h3>
+      </div>
+      <div *ngIf="combatController" class="perk-item combat">
+        <img src="assets/images/card-icons/sword.png" alt="combat img">
+        <h3>+{{combatController}}</h3>
+      </div>
+    </div>
+
+    <app-card
+      [selectIsActive] = "true"
+      [heroName]="card.name"
+      [src]="card.image.url"
+      [intelligence]="card.powerstats.intelligence"
+      [strength]="card.powerstats.strength"
+      [speed]="card.powerstats.speed"
+      [durability]="card.powerstats.durability"
+      [power]="card.powerstats.power"
+      [combat]="card.powerstats.combat"
+    >
+    </app-card>
+    <div class="bottom-text-container">
+    <h1 *ngIf="findEnemyFlag" (click)="findEnemy()" >FIND THE ENEMY!</h1>
+    <h1 *ngIf="looseFlag" (click)="navigateToUserProfile()" >SELECT OTHER HERO</h1>
+    </div>
+
+  </div>
+
+<!--  <div class="loader">-->
+<!--    <ngx-loading-spinner> </ngx-loading-spinner>-->
+<!--  </div>-->
+
+  <div class="find-battle-field" >
+
+    <ng-container *ngIf="stopSearchFlag">
+      <app-loader></app-loader>
+    </ng-container>
+
+    <ng-container *ngIf="findEnemyIsFinishedFlag" >
+      <h1 class="battle-button"
+          style="cursor: pointer"
+          (click)="startBattle()"
+      >
+        BATTLE!
+      </h1>
+    </ng-container>
+
+    <ng-container *ngIf="startBattleFlag">
+      <div class="battle-image" >
+        <img src="/assets/images/swords.png" alt="swords img">
+      </div>
+    </ng-container>
+
+
+
+  </div>
+
+  <ng-container *ngIf="enemyHeroFlag">
+  <div class="enemyCard"
+       *ngFor="let EnemyCard of enemyHero"
+  >
+    <app-card
+      [selectIsActive] = "true"
+      [heroName]="EnemyCard.name"
+      [src]="EnemyCard.image.url"
+      [intelligence]="EnemyCard.powerstats.intelligence"
+      [strength]="EnemyCard.powerstats.strength"
+      [speed]="EnemyCard.powerstats.speed"
+      [durability]="EnemyCard.powerstats.durability"
+      [power]="EnemyCard.powerstats.power"
+      [combat]="EnemyCard.powerstats.combat"
+    >
+
+    </app-card>
+  </div>
+  </ng-container>
+</div>

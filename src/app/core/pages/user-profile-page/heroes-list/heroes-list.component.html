@@ -1,0 +1,32 @@
+<div class="no-selected-hero-message" *ngIf="usersFlag" (click)="navigateToHome()">
+  <h1>Нет выбранных героев</h1>
+  <h3>Выбрать героя!</h3>
+</div>
+
+<div class="heroes">
+
+  <div class="card" *ngFor="let card of heroes">
+    <app-card
+      (battleButton)="selectForBattle(card);"
+      [battleMode] = 'true'
+      [heroName]="card.name"
+      [src]="card.image.url"
+      [intelligence]="card.powerstats.intelligence"
+      [strength]="card.powerstats.strength"
+      [speed]="card.powerstats.speed"
+      [durability]="card.powerstats.durability"
+      [power]="card.powerstats.power"
+      [combat]="card.powerstats.combat"
+    > </app-card>
+  </div>
+</div>
+
+<!--<mat-paginator [length]="heroes.length"-->
+<!--               [pageSize]="10"-->
+<!--               [pageSizeOptions]="[5, 10, 25, 100]"-->
+<!--               aria-label="Select page">-->
+<!--</mat-paginator>-->
+
+
+<!--  (infoButton)="navigateToInfoPage(card)"-->
+<!--  (selectButton)="selectHero(card)"-->
