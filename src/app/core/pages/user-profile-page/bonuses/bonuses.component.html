@@ -1,0 +1,47 @@
+<!--[heroName]="card.name"
+      [src]="card.image.url"
+      [intelligence]="card.powerstats.intelligence"
+      [strength]="card.powerstats.strength"
+      [speed]="card.powerstats.speed"
+      [durability]="card.powerstats.durability"
+      [power]="card.powerstats.power"
+      [combat]="card.powerstats.combat"
+      -->
+
+<div class="container">
+  <div class="header">
+    <h1>YOU PERKS</h1>
+  </div>
+  <div class="perks-container">
+    <div class="item intelligence" (click)="intelligenceUp()">
+      <h3>+ 20 intelligence</h3>
+      <img src="assets/images/card-icons/artificial-intelligence.png" alt="intelligence img">
+      <h3>{{perksCounter[0]}}</h3>
+    </div>
+    <div class="item strength" (click)="strengthUp()">
+       <h3>+ 20 strength</h3>
+      <img src="assets/images/card-icons/health-care.png" alt="strength img">
+      <h3>{{perksCounter[1]}}</h3>
+    </div>
+    <div class="item speed" (click)="speedUp()">
+       <h3>+ 20 speed</h3>
+      <img src="assets/images/card-icons/speed.png" alt="speed img">
+      <h3>{{perksCounter[2]}}</h3>
+    </div>
+    <div class="item durability" (click)="durabilityUp()">
+       <h3>+ 20 durability</h3>
+      <img src="assets/images/card-icons/exercise.png" alt="durability img">
+      <h3>{{perksCounter[3]}}</h3>
+    </div>
+    <div class="item power" (click)="powerUp()">
+       <h3>+ 20 power</h3>
+      <img src="assets/images/card-icons/flash.png" alt="power img">
+      <h3>{{perksCounter[4]}}</h3>
+    </div>
+    <div class="item combat" (click)="combatUp()">
+       <h3>+ 20 combat</h3>
+      <img src="assets/images/card-icons/sword.png" alt="combat img">
+      <h3>{{perksCounter[5]}}</h3>
+    </div>
+  </div>
+</div>

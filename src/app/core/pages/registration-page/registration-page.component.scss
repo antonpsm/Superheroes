@@ -1,0 +1,129 @@
+h2 {
+  position: absolute;
+  top: 12px;
+  left: 84px;
+  color: #f8d900;
+  text-decoration: underline;
+  text-shadow:
+    -0   0.5px 0 #ff0202,
+}
+
+p {
+  color: #b0b0b0;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(171deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 56%, rgba(0,212,255,1) 100%);
+
+  & .logo {
+    flex-wrap: wrap;
+    max-width: 40%;
+    max-height: 40%;
+    margin-bottom: 50px;
+  }
+
+  & .registration-container {
+    position: relative;
+    height: 320px;
+    width: 300px;
+    padding: 0 10px;
+    border-radius: 10px;
+    border: #1863a4 solid 1px;
+    background: rgba(96, 108, 182, 0.33);
+    box-shadow: 0 168px 147px 12px rgba(255, 255, 255, 0.22);
+    transition: 1s linear;
+
+
+    &__invalid{
+      display: none;
+    }
+
+    &__email {
+      position: absolute;
+      top: 65px;
+      display: flex;
+      justify-content: space-between;
+      width: 95%;
+    }
+
+    & .email-error{
+      position: absolute;
+      top: 95px;
+      left: 72px;
+      color: #ff0202;
+      font-size: 11px;
+
+    }
+
+    &__password {
+      top: 115px;
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      width: 95%;
+    }
+
+    & .password-error{
+      position: absolute;
+      bottom: 115px;
+      left: 111px;
+      color: #ff0202;
+      font-size: 11px;
+    }
+
+    &__password2 {
+      position: absolute;
+      top: 165px;
+      display: flex;
+      justify-content: space-between;
+      width: 95%;
+    }
+
+    &__user-name {
+      position: absolute;
+      top: 215px;
+      display: flex;
+      justify-content: space-between;
+      width: 95%;
+    }
+
+    & .create-button{
+      position: absolute;
+      bottom: 15px;
+      left: 96px;
+      cursor: pointer;
+      width: 130px;
+      height: 30px;
+      color: #ffffff;
+      background: #0b6bff;
+      border-radius: 5px;
+      border: none;
+      transition: 0.2s;
+
+      &.invalid{
+        background: #5b5b5b;
+        color: #bbbbbb;
+        cursor: auto;
+      }
+
+
+    }
+
+    & .valid-rule{
+      position: absolute;
+      top: 142px;
+      left: 13px;
+      font-size: 11px;
+      color: red;
+    }
+  }
+}
+.create-button:active{
+  transform: scale(0.97);
+  background: #69a5ff;
+}

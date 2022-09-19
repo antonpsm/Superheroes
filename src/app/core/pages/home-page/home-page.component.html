@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="input">
+    <div *ngIf="!searchControl.value" class="alphabet-button" (click)="openAlphabetFlag = !openAlphabetFlag">
+      abc...
+    </div>
+    <input (keydown.enter)="search()" [formControl]="searchControl">
+    <img (click)="search()" src="assets/images/search-interface-symbol.png" alt="">
+
+
+  </div>
+
+  <div *ngIf="openAlphabetFlag && !searchControl.value" class="alphabet-container">
+    <div class="letter" *ngFor="let letter of alphabetLetters"
+    (click)="searchHeroByLetter(letter.toLowerCase())"
+    >{{letter}}</div>
+
+  </div>
+
+  <p *ngIf="heroCounter" class="heroCounter">{{heroCounter}} Heroes on page</p>
+
+  <div class="heroes">
+    <div class="card" *ngFor="let card of heroes">
+      <app-card
+        [selectMode] = "true"
+        (infoButton)="navigateToInfoPage(card)"
+        (selectButton)="selectHero(card)"
+        [heroName]="card.name"
+        [src]="card.image.url"
+        [intelligence]="card.powerstats.intelligence"
+        [strength]="card.powerstats.strength"
+        [speed]="card.powerstats.speed"
+        [durability]="card.powerstats.durability"
+        [power]="card.powerstats.power"
+        [combat]="card.powerstats.combat"
+      > </app-card>
+    </div>
+
+  </div>
+</div>

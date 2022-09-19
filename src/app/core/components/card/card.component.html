@@ -1,0 +1,53 @@
+<div class="container" [class.battle]="selectForBattleE">
+
+  <div class="button" *ngIf="selectMode">
+    <button class="button__select" (click)="selectButtonClick()"><h2>SELECT</h2></button>
+    <button class="button__info" (click)="infoButtonClick()"><h2>INFO</h2></button>
+  </div>
+  <div class="button" *ngIf="battleMode">
+    <button class="button__info" (click)="battleButtonClick()"><h2>PREPARE TO BATTLE!</h2></button>
+  </div>
+
+  <!--  <div class="arrow-left" *ngIf="selectIsActive" (click)="arrowLeftButtonClick()">
+      <img src="assets/images/next.png" alt="" class="">
+    </div>
+    <div class="arrow-right" *ngIf="selectIsActive" (click)="arrowRightButtonClick()">
+      <img src="assets/images/next.png" alt="" class="">
+    </div>-->
+
+  <img src="assets/images/herocard.6ccefb6f81025910ec6f.png" alt="heroCard" class="card">
+  <img src="{{src}}" alt="" class="card__image">
+
+  <div class="powerstats">
+    <div class="powerstats-item">  <!--__intelligence-->
+      <img src="assets/images/card-icons/artificial-intelligence.png" alt="">
+      <p>{{intelligence}}</p>
+    </div>
+    <div class="powerstats-item">  <!--__strength-->
+      <img src="assets/images/card-icons/health-care.png" alt="">
+      <p>{{strength}}</p>
+    </div>
+    <div class="powerstats-item">  <!--__speed-->
+      <img src="assets/images/card-icons/speed.png" alt="">
+      <p>{{speed}}</p>
+    </div>
+    <div class="powerstats-item">  <!--__durability-->
+      <img src="assets/images/card-icons/exercise.png" alt="">
+      <p>{{durability}}</p>
+    </div>
+    <div class="powerstats-item">  <!--__power-->
+      <img src="assets/images/card-icons/flash.png" alt="">
+      <p>{{power}}</p>
+    </div>
+    <div class="powerstats-item">  <!--__combat-->
+      <img src="assets/images/card-icons/sword.png" alt="">
+      <p>{{combat}}</p>
+    </div>
+  </div>
+
+  <div class="hero-name">
+    <h1>{{heroName | titlecase}}</h1>
+  </div>
+
+
+</div>

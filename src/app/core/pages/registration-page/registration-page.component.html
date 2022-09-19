@@ -1,0 +1,36 @@
+<div class="container">
+  <img src="./assets/images/superheroes_logo.png" alt="logo" class="logo">
+  <div class="registration-container">
+
+    <h2>Registration</h2>
+
+    <div class="registration-container__email">
+      <p class="registration-container__email__text">Email</p>
+      <app-input [inputType]="'text'" [textControl]="registrationGroup.get('email') | getControl"></app-input>
+    </div>
+    <p class="email-error" *ngIf="registrationGroup.hasError('emailError')">{{registrationGroup.getError('emailError')}}</p>
+
+
+    <div class="registration-container__password">
+      <p class="registration-container__password__text">Password</p>
+      <app-input [inputType]="'password'" [textControl] = "registrationGroup.get('password') | getControl"></app-input>
+    </div>
+    <p *ngIf="!registrationGroup.get('password')?.valid && registrationGroup.get('password')?.dirty" class="valid-rule">should be contain 1 upperCase, 1 lowerCase, 1 symbol, 3 numbers</p>
+
+    <div class="registration-container__password2">
+      <p class="registration-container__password2__text">Confirm password</p>
+      <app-input [inputType]="'password'" [textControl] = "registrationGroup.get('passwordCheck') | getControl"></app-input>
+    </div>
+<p class="password-error"  *ngIf="registrationGroup.hasError('error')">{{registrationGroup.getError('error')}}</p>
+
+    <div class="registration-container__user-name">
+      <p class="registration-container__user-name__text">User name</p>
+      <app-input [inputType]="'text'" [textControl] = "registrationGroup.get('username') | getControl"></app-input>
+    </div>
+
+    <button (click)="registration()" class="create-button"
+            [class.invalid] = "!registrationGroup.valid"
+    >Create new account</button>
+
+  </div>
+</div>

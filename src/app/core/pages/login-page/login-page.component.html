@@ -1,0 +1,30 @@
+<div class="container">
+  <img src="./assets/images/superheroes_logo.png" alt="logo" class="logo">
+  <div *ngIf="!welcomeMessage" [class]="!logInGroup.touched ? 'login-container' : 'login-container valid'">
+
+    <h2>Welcome!</h2>
+
+    <div class="login-container__email">
+      <p class="login-container__email__text">Email</p>
+      <app-input [inputType]="'text'" [textControl]="logInGroup.get('email') | getControl"></app-input>
+    </div>
+
+    <div class="login-container__password">
+      <p class="registration-container__password__text">Password</p>
+      <app-input [inputType]="'password'" [textControl] = "logInGroup.get('password') | getControl"></app-input>
+    </div>
+
+    <button (click)="login()" class="create-button"
+            [class.invalid] = "!logInGroup.valid"
+    >Sign in</button>
+    <div class="routing-container">
+    <p>You don't have account? <a [routerLink]="'/registration'">Sign up!</a></p>
+    </div>
+    <p class="user-flag-message" *ngIf="userFlag">{{userFlag}}</p>
+  </div>
+
+  <h1 *ngIf="welcomeMessage" class="welcome-message">{{welcomeMessage}}</h1>
+
+</div>
+
+
